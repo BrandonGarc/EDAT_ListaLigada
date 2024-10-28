@@ -2,17 +2,18 @@
 {
     public class SingleList <T>
     {
-        private SingleNode<T>? _First;
+        private SingleNode<T>? _first;
 
         public SingleList()
 
         {
-            _First = null;
+            _first = null;
         }
 
-        public bool isEmpy => _First == null; // Se compara para ver si la lista esta vacía
+        public bool isEmpy => _first == null; // Se compara para ver si la lista esta vacía
 
-        public void Add(T item) {
+        public void Add(T item) 
+        {
 
             var node = new SingleNode<T>(item);
 
@@ -20,11 +21,11 @@
 
             if (isEmpy) //Si la lista esta vacia
             {
-                _First = node; //_First es un puntero
+                _first = node; //_First es un puntero
             }
             else
             {
-                var pointer = _First;
+                var pointer = _first;
 
                 while (pointer!.Next != null)
                 {
@@ -43,10 +44,17 @@
 
         }
 
+        /*public bool Remove (T elemento)
+        {
+            var pointer = _first;
+
+        }
+        */
+
         public override string ToString()
         {
             var cadenaLista = string.Empty;
-            var pointer = _First;
+            var pointer = _first;
 
             while (pointer!= null)
             {
